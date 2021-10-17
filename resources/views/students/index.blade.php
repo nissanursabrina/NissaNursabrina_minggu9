@@ -17,6 +17,7 @@
                     <table class="table table-responsive table-striped"> 
                     <a href="/students/create" class="btn btn-primary">Add Data</a> 
                     <br><br>
+                    <a href="/home" class="btn btn-primary">Home</a><br><br>
                         <thead> 
                             <tr> 
                                 <th>NIM</th>  
@@ -36,7 +37,12 @@
                                 <td>{{ $s->department }}</td>
                                 <td>{{ $s->phone_number }}</td>
                                 <td>
-                                <a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
+                                <form action="/students/{{$s->id}}" method="post">
+                                    <a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" name="delete" class="btn btn-danger">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach 
