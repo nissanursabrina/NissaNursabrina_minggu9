@@ -22,8 +22,8 @@
                                 <th>NIM</th>  
                                 <th>Name</th> 
                                 <th>Class</th>
-                                <th>Departement</th>
-                                <th>Phone</th>
+                                <th>Department</th>
+                                <th>Phone_number</th>
                                 <th>Action</th>
                                 </tr> 
                         </thead> 
@@ -33,8 +33,11 @@
                                 <td>{{ $s->nim }}</td> 
                                 <td>{{ $s->name }}</td> 
                                 <td>{{ $s->class }}</td>
-                                <td>{{ $s->departement }}</td>
-                                <td>{{ $s->phone }}</td>
+                                <td>{{ $s->department }}</td>
+                                <td>{{ $s->phone_number }}</td>
+                                <td>
+                                <a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
+                                </td>
                             </tr>
                             @endforeach 
                         </tbody> 
