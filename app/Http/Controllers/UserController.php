@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -37,7 +37,11 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //add data
+        User::create($request->all());
+        // if true, redirect to index
+        return redirect()->route('users.index')
+        ->with('success', 'Add data success!');
     }
 
     /**
@@ -59,7 +63,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('users.edit',['user'=>$user]);
     }
 
     /**
