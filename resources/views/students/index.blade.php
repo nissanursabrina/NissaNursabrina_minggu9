@@ -26,6 +26,7 @@
                                 <th>Department</th>
                                 <th>Phone_number</th>
                                 <th>Action</th>
+                                <th></th><th></th>
                                 </tr> 
                         </thead> 
                         <tbody> 
@@ -39,7 +40,15 @@
                                 <td>
                                 <form action="/students/{{$s->id}}" method="post">
                                     <a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
+                                    </form>
+                                </td>
+                                <td>
+                                <form action="/students/{{$s->id}}" method="post">
                                     <a href="/students/{{$s->id}}" class="btn btn-info">View</a>
+                                    </form>
+                                </td>
+                                <td>
+                                <form action="/students/{{$s->id}}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" name="delete" class="btn btn-danger">Delete</button>
