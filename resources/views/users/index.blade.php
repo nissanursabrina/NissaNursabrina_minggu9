@@ -15,6 +15,8 @@
                     @endif 
   
                     <table class="table table-responsive table-striped"> 
+                    <a href="/users/create" class="btn btn-primary">Add Data</a> 
+                    <table class="table table-responsive table-striped"> 
                         <thead> 
                             <tr> 
                                 <th>Username</th>  
@@ -33,6 +35,19 @@
                                 <td>{{ $u->email }}</td>
                                 <td>{{ $u->password }}</td>
                                 <td>{{ $u->created_at }}</td>
+                                <td>
+                                <form action="/users/{{$u->id}}" method="post">
+                                    <a href="/users/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
+                                    </form>
+                                </td>
+                                <td>
+                                <form action="/users/{{$u->id}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" name="delete" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
                             @endforeach 
                         </tbody> 
                     </table> 
