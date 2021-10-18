@@ -14,6 +14,11 @@
                         </div> 
                     @endif 
   
+                    <form class="form-inline my-2 my-lg-0" method="GET" action="/users">
+                    <input name="cari" class="form-control mr-sm-2" type="search" placeholder="search" aria-label="Search">
+                        <button type="submit" name="delete" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+                    </form>
+
                     <table class="table table-responsive table-striped"> 
                     <a href="/users/create" class="btn btn-primary">Add Data</a> 
                     <table class="table table-responsive table-striped"> 
