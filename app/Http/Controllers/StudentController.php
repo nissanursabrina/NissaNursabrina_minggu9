@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Kelas;
+
 
 class StudentController extends Controller
 {
@@ -14,8 +16,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
-        return view('students.index',['student'=>$students]);
+        /* $students = Student::all();
+        return view('students.index',['student'=>$students]); */
+        $student = Student::with('kelas')->get();
+        return view('students.index', ['student'=>$student]);
     }
 
     /**
