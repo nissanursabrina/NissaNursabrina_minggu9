@@ -22,9 +22,9 @@
                                 <th>NIM</th>  
                                 <th>Name</th> 
                                 <th>Class</th>
-                                <!-- <th>Department</th>
+                                <th>Department</th>
                                 <th>Phone_number</th>
-                                <th>Action</th> -->
+                                <th>Action</th>
                                 <th></th><th></th>
                                 </tr> 
                         </thead> 
@@ -40,6 +40,8 @@
                                 <td>{{ $s->nim }}</td>
                                 <td>{{ $s->name }}</td>
                                 <td>{{ $s->kelas->class_name }}</td>
+                                <td>{{ $s->department }}</td>
+                                <td>{{ $s->phone_number }}</td> 
 
                                 <td>
                                 <form action="/students/{{$s->id}}" method="post">
