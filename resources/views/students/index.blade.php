@@ -55,6 +55,11 @@
                                 </td>
                                 <td>
                                 <form action="/students/{{$s->id}}" method="post">
+                                <a href="/students/{{$s->id}}/detail" class="btn btn-info">Nilai</a>
+                                    </form>
+                                </td>
+                                <td>
+                                <form action="/students/{{$s->id}}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" name="delete" class="btn btn-danger">Delete</button>
