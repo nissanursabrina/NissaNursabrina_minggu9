@@ -13,7 +13,20 @@
                             {{ session('status') }} 
                         </div> 
                     @endif 
-  
+                    <form class="form-inline my-2 my-lg-0" method="GET" action="/students">
+                    <input name="cari" class="form-control mr-sm-2" type="search" placeholder="search" aria-label="Search">
+                        <button type="submit" name="delete" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+                    </form>
+                    <!-- <form action="/search" method="GET" role="search">
+                        {{ csrf_field() }}
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Input student name" name="q">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="submit">Search</button>
+                            </span>
+                        </div>
+                    </form> -->
+                    <br>
                     <table class="table table-responsive table-striped"> 
                     <a href="/students/create" class="btn btn-primary">Add Data</a> 
                     <tab> <a href="/home" class="btn btn-primary">Home</a><br><br>
@@ -50,7 +63,7 @@
                                 </td>
                                 <td>
                                 <form action="/students/{{$s->id}}" method="post">
-                                    <a href="/students/{{$s->id}}" class="btn btn-info">View</a>
+                                    <a href="/students/{{$s->id}}" class="btn btn-success">View</a>
                                     </form>
                                 </td>
                                 <td>
