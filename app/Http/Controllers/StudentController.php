@@ -155,7 +155,7 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
         //$student = Student::find($id);
-        return view('student.detail', ['student'=>$student]);
+        return view('students.detail', ['student'=>$student]);
         //dd($student->courses);
     }
 
