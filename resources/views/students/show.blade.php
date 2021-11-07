@@ -14,6 +14,13 @@
                         </div>
                     @endif
 
+                    <form action="/students/{{$student->id}}" method="post"> 
+                        {{csrf_field()}} 
+                        @method('PUT') 
+                        <h2>Show Student {{ $student->name }}</h2>
+                        <br>
+                        
+                        <img width="150px" src="{{asset('storage/'.$student->photo)}}">
 
                     <!-- <table class="table table-responsive">
                         <tr><th>NIM</th><th>:</th><td>{{ $student->nim }}</td></tr>
