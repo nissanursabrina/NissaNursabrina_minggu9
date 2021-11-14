@@ -15,9 +15,9 @@
 
     <h4 align="center">STUDENT REPORT</h4>
 
-    <b>Name</b> : {{ $student->name }} <br>
-    <b>NIM</b> : {{ $student->nim }} <br>
-    <b>Class</b> : {{ $student->kelas->class_name }} <br><br>
+    <b>Name</b>     : {{ $student->name }} <br>
+    <b>NIM</b>      : {{ $student->nim }} <br>
+    <b>Class</b>    : {{ $student->kelas->class_name }} <br><br>
     
     <table class="table table-responsive table-striped">
         <thead>
