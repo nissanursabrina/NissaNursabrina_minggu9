@@ -27,8 +27,9 @@
                                 <th>Username</th>  
                                 <th>Name</th> 
                                 <th>Email</th>
-                                <th>Password</th>
-                                <th>Created At</th>
+                                <th>Role</th>
+                                <!-- <th>Password</th>
+                                <th>Created At</th> -->
                                 <th></th><th></th>
                                 </tr> 
                         </thead> 
@@ -38,8 +39,9 @@
                                 <td>{{ $u->username }}</td> 
                                 <td>{{ $u->name }}</td> 
                                 <td>{{ $u->email }}</td>
-                                <td>{{ $u->password }}</td>
-                                <td>{{ $u->created_at }}</td>
+                                <td>{{ $u->role }}</td>
+                                <!-- <td>{{ $u->password }}</td>
+                                <td>{{ $u->created_at }}</td> -->
                                 <td>
                                 <form action="/users/{{$u->id}}" method="post">
                                     <a href="/users/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
@@ -50,6 +52,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" name="delete" class="btn btn-danger">Delete</button>
+                                    <a href="/users/{{$u->id}}" class="btn btn-info">Show</a> 
                                     </form>
                                 </td>
                             </tr>
